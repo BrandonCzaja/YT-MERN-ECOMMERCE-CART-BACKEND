@@ -19,3 +19,5 @@ const importData = async () => {
 };
 
 importData(); // When this file is called I want to run the data import immediately, so I call it here
+
+// To import data run <npm run import_data>
