@@ -1,7 +1,7 @@
 require("dotenv").config(); // Bring in .env variables
 const productData = require("./index"); // Bring in sample data
-const connectDB = require("../database/db.js"); // Database connection
-const Product = require("../models/product.js"); // Product Model
+const connectDB = require("../database/db"); // Database connection
+const Product = require("../models/product"); // Product Model
 
 connectDB(); // Connect to Database
 
@@ -13,10 +13,8 @@ const importData = async () => {
 		console.log("Data Import Successful");
 		process.exit(); // This script is only for importing, it doesn't need to run all day. That is why I am exiting
 	} catch (err) {
-		{
-			console.error(`Error Importing Data: ${err}`);
-			process.exit(1);
-		}
+		console.error(`Error Importing Data: ${err}`);
+		process.exit(1);
 	}
 };
 
